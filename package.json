@@ -1,0 +1,14 @@
+{
+  "name": "Password_md",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Quick talk for R&Day #14 2019 - Oodrive",
+  "scripts": {
+    "start": "cleaver watch README.md"
+  },
+  "author": "Adrien Gibrat <a.gibrat@oodrive.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cleaver": "0.8.7"
+  }
+}
