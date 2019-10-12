@@ -1,0 +1,833 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Password is 💀</title>
+  <style type="text/css">
+    @font-face {
+  font-family: 'Inconsolata';
+  src: local('Inconsolata Regular'), url(theme/font/inconsonlata.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: local('Noto Sans'), local('NotoSans'), url(theme/font/notosans.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Hind';
+  src: local('Hind Light'), local('Hind-Light'), url(theme/font/hind.woff2) format('woff2');
+}
+
+/* Theme Styles */
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 300;
+  font-size: 150%;
+  color: #1C0F5D;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.center {
+  text-align: center;
+}
+
+/* The following is needed for the ESC overview slide selection */
+.slides {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.slides.active .slide:not(.hidden) {
+  border: 22px solid red;
+}
+
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  cursor: pointer;
+  display: none;
+}
+
+.slides.active .slide:hover .slide-overlay::before {
+  content: '▶';
+  text-align: center;
+  line-height: 300px;
+  font-size: 200px;
+  color: #1C0F5D;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.slides.active .slide:hover .slide-overlay{
+  visibility: visible;
+  background: rgba(0,0,0,0.5);
+}
+.slide-wrapper {
+  margin: 7px;
+  transition: all 250ms;
+}
+
+/* Presentation Styles */
+.slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 3rem 4.5rem 6rem;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.slide-content {
+  z-index: 2;
+  opacity: 1;
+  font-size: 200%;
+  font-weight: 200;
+  line-height: 1.375;
+  height: 100%;
+  overflow: hidden;
+}
+
+#slide-2 img {
+  height: 70vh;
+  margin: 0 auto;
+  display: block;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 3;
+}
+
+.controls .overview {
+  display: inline-block;
+  float: left;
+  color: #C7C7C7;
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 30px;
+  cursor: pointer;
+}
+.controls .overview:hover {
+  color: #e5007e;
+}
+.controls .arrow {
+  float: left;
+  height: 0;
+  width: 0;
+  margin-right: 15px;
+  border: 15px solid #C7C7C7;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.controls .prev {
+  border-top-color: transparent;
+  border-right-width: 25px;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-left-width: 0;
+}
+
+.controls .next {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-right-width: 0;
+  border-bottom-color: transparent;
+  border-left-width: 25px;
+}
+
+.controls .prev:hover {
+  border-right-color: #e5007e;
+  cursor: pointer;
+}
+
+.controls .next:hover {
+  border-left-color: #e5007e;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  margin: 1rem 0;
+  font-family: 'Hind', sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 300%;
+  text-align: center;
+  margin-top: 2em;
+}
+
+h2 {
+  font-size: 200%;
+  font-weight: 200;
+  text-align: center;
+  margin: 1em;
+}
+
+h3 {
+  font-size: 140%;
+  padding-bottom: 1rem;
+  border-bottom: 1px ridge #ff8061;
+}
+
+ul {
+  padding-left: 6rem;
+}
+
+blockquote {
+  padding-left: 20px;
+  margin-left: 0;
+  border-left: 5px solid #ff8061;
+  border-radius: 0 3px 3px 0;
+}
+
+blockquote p {
+  padding: .5em;
+}
+
+p.fragment,
+li {
+  width: 80rem;
+  margin: 1.5em auto;
+}
+ul {
+  list-style: none; /* Remove default bullets */
+}
+ul li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #ff8061; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */ 
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+span[data-icon] {
+  margin-left: 3rem;
+}
+
+[data-icon]::before {
+  display: inline-block;
+  content: attr(data-icon);
+  color: #ff8061;
+  font-size: 1.5em;
+  vertical-align: sub;
+  margin-right: .5em;
+}
+[data-icon="✓"]::before {
+  color: green;
+}
+:not(.hidden) [data-icon]:not(.hidden)::before {
+  animation-name: stamp;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+small {
+  font-size: 60%;
+}
+small.fragment {
+  color: #e5007e;
+}
+.slide.screen img {
+  max-width: 80vw;
+  transform-origin: 50% 0;
+  margin: 0 auto;
+  display: block;
+}
+.slide.screen.full img {
+  width: 100%;
+}
+.slide.screen.large img {
+  width: 70%;
+}
+
+.left {
+  float: left;
+  width: 48%;
+}
+
+.right {
+  float: right;
+  width: 48%;
+}
+
+.float-right {
+  float: right;
+}
+
+.author h1 {
+  margin: 2em 0 1em;
+  font-size: 170%;
+  font-weight: 200;
+  text-align: center;
+}
+
+.author h3 {
+  font-weight: 100;
+  text-align: center;
+  border: none;
+}
+
+a {
+  word-break: break-all;
+  text-decoration: none;
+  color: #e5007e;
+}
+
+hr {
+  border: 1px solid #e5007e;
+}
+
+
+table td,
+table th {
+  padding-right: 3em;
+  text-align: left;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  z-index: 2;
+}
+
+.progress-bar {
+  height: 3px;
+  width: 0;
+  background-color: red;
+  -webkit-transition: width .15s ease-out;
+     -moz-transition: width .15s ease-out;
+       -o-transition: width .15s ease-out;
+          transition: width .15s ease-out;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* Responsiveness */
+@media (max-width: 850px) {
+  body {
+    font-size: 70%;
+  }
+
+  .slide {
+    padding: 50px;
+  }
+  p:last-of-type a {
+    bottom: 60px;
+  }
+
+  .slide-content {
+    width: auto;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  .prev,
+  .prev:hover {
+    border-right-color: rgba(135, 135, 135, .5);
+  }
+
+  .next,
+  .next:hover {
+    border-left-color: rgba(135, 135, 135, .5);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    overflow: hidden;
+    font-size: 50%;
+  }
+
+  .slide {
+    padding: 10px;
+  }
+  p:last-of-type a {
+    bottom: 15px;
+  }
+  .slide-content {
+    height: 340px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  ul {
+    padding-left: 25px;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  .hidden {
+    visibility: visible;
+  }
+
+  html {
+    overflow: visible;
+  }
+
+  body {
+    margin: 0 !important;
+    overflow: visible;
+    border: 0;
+  }
+
+  .progress,
+  .controls {
+    display: none;
+  }
+  .slides {
+    display: block;
+  }
+  .slide-wrapper {
+    width: 100%;
+    height: 21cm;
+    margin: 0;
+    page-break-before: always;
+    page-break-inside: avoid;
+    page-break-after: always;
+  }
+
+  .slide {
+    position: relative;
+    height: 100%;
+  }
+
+  ._slide-content {
+    margin-top: 0;
+    margin-bottom: 40px;
+    overflow: visible;
+  }
+
+}
+
+.slide {
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url(theme/img/footer.png);
+  box-sizing: border-box;
+}
+
+.author-slide .slide-content {
+  background-position: center 30rem;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-origin: border-box;
+  background-image: url(theme/img/oodrive.png);
+}
+
+.author-slide .url a,
+.author-slide .email a {
+  color: #0171af;
+}
+
+@keyframes stamp {
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity:.3;
+    transform-origin: 50% 50%;
+    transform: rotate(-2deg) scale(4);
+    transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  }
+  100%{
+    opacity:1;
+    transform: rotate(-15deg) scale(1);
+  }
+}
+
+  </style>
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+
+<div class="slides">
+    <div class="slide-wrapper">
+      <div class="slide" id="slide-1">
+        <div data-id="1" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="password-is-span-style-color-black-span-">Password is <span style="color:black">💀</span></h1>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  screen full" id="slide-2">
+        <div data-id="2" class="slide-overlay"></div>
+        <section class="slide-content"><p><a href="https://xkcd.com/936/" title="xkcd, the universal source of truth"><img src="img/password_strength.png" alt="Password strength misconception"></a></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-3">
+        <div data-id="3" class="slide-overlay"></div>
+        <section class="slide-content"><h2 id="password-sucks">Password sucks</h2>
+<center>2018: <a href="https://www.microsoft.com/en-us/security/technology/identity-access-management/passwordless">The begining of &quot;The end of passwords&quot;</a></center>
+
+<p><span class="fragment" data-icon="🔓">not secure <small><a href="https://haveibeenpwned.com/unifiedsearch/s.deremur%40oodrive.fr">haveibeenpwned</a>: 8 506 873 299 accounts</small></span><br>
+<span class="fragment" data-icon="☹">not user friendly <small><a href="https://uxplanet.org/why-complex-passwords-are-bad-design-and-5-ways-to-do-better-affcc4516406">complex password = ugly UX</a></small></span><br></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-4">
+        <div data-id="4" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="password-policies-">Password policies 💩</h3>
+<center><a href="https://www.ssi.gouv.fr/guide/mot-de-passe/" title="Agence Nationale de la Sécurité des Systèmes d&#39;Information">ANSSI</a> ⚡ <a href="https://pages.nist.gov/800-63-3/sp800-63b.html#sec5" title="National Institute of Standards and Technology">NIST</a></center>
+
+<p><span class="fragment check" data-icon="✓">do not reuse password</span><br>
+<span class="fragment check" data-icon="✓">prefer passphrase</span><br>
+<span class="fragment check" data-icon="❎">force special characters</span><br>
+<span class="fragment check" data-icon="❎">force periodic password changes</span><br>
+<span class="fragment check" data-icon="✓">check against lists (weak, common, leaked, etc.)</span><br></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  screen full" id="slide-5">
+        <div data-id="5" class="slide-overlay"></div>
+        <section class="slide-content"><p><a href=""><img src="img/forget_password.jpg" alt="User experience when forgot password"></a></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  screen full" id="slide-6">
+        <div data-id="6" class="slide-overlay"></div>
+        <section class="slide-content"><p><a href=""><img src="img/expired_password.jpg" alt="User experience when password expires"></a></p>
+<h3 id="-small-covers-small-various-use-cases"><small>Covers</small> various use cases</h3>
+<blockquote>
+<p>Successful for multiple pipeline types</p>
+</blockquote>
+<ul>
+<li>Single Page Applications <small class="fragment"><a href="https://docs.gitlab.com/ce/ci/examples/">build</a>, <a href="https://docs.gitlab.com/ce/workflow/releases.html">release</a> &amp; <a href="https://docs.gitlab.com/ce/topics/autodevops/">deploy</a></small></li>
+<li>Components &amp; libraries <small class="fragment"><a href="https://about.gitlab.com/2018/02/05/test-all-the-things-gitlab-ci-docker-examples/">test</a> &amp; <a href="https://about.gitlab.com/stages-devops-lifecycle/package/">publish</a></small></li>
+<li>End2end tests <small class="fragment"><a href="https://docs.gitlab.com/ce/user/project/pipelines/schedules.html">scheduled executions</a> &amp; <a href="https://about.gitlab.com/2016/08/26/ci-deployment-and-environments/">aggregate data</a></small></li>
+<li>Documentations &amp; tasks <small class="fragment"><a href="https://docs.gitlab.com/ce/user/project/pages/">hosted by gitlab pages</a></small></li>
+</ul>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-7">
+        <div data-id="7" class="slide-overlay"></div>
+        <section class="slide-content"><h1 id="what-does-it-look-like-">What does it look like ?</h1>
+<center>Few examples how we use Gitlab CI</center></section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  screen" id="slide-8">
+        <div data-id="8" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="pipelines-show-jobs-status-at-each-step">Pipelines show jobs status at each step</h3>
+<p class="fragment" data-icon="🎉">Visible pipeline details <small><a href="https://about.gitlab.com/2016/07/29/the-basics-of-gitlab-ci/">in Merge Request view </a></small></p>
+
+<p><img src="img/integrated.png" alt="Gitlab Pipeline in MR" title="CI at your fingertips"></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  screen full" id="slide-9">
+        <div data-id="9" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="jobs-log-task-execution-keep-artifacts">Jobs log task execution &amp; keep artifacts</h3>
+<p class="fragment" data-icon="👁">Easy to read logs <small><a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/37898">ansi colors support</a></small></p>
+<p class="fragment" data-icon="📦">Save artifacts between jobs <small><a href="https://docs.gitlab.com/ce/user/project/pipelines/job_artifacts.html">to access it later</a></small></p>
+
+<p><img src="img/job.png" alt="Gitlab CI Job view" title="Reabable logs &amp; artifact browsing"></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden  screen large" id="slide-10">
+        <div data-id="10" class="slide-overlay"></div>
+        <section class="slide-content"><h3 id="using-template-allow-dry-ci-settings">Using template allow DRY CI settings</h3>
+<p class="fragment" data-icon="📄">Reusable versioned templates <small><a href="https://docs.gitlab.com/ce/ci/yaml/#include">with include &amp; extends</a></small></p>
+
+<p><img src="img/yaml.png" alt="Gitlab CI yaml" title="Concise markup using templates"></p>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden" id="slide-11">
+        <div data-id="11" class="slide-overlay"></div>
+        <section class="slide-content"><h2 id="last-tips">Last tips</h2>
+<ul>
+<li><a href="https://docs.gitlab.com/ce/ci/docker/using_docker_build.html">Package tools</a> with <a href="https://github.com/wsargent/docker-cheat-sheet">Docker</a></li>
+<li>Script with your <a href="https://nodejs.org/en/docs/es6/">favorite language</a>, glue with <a href="https://devhints.io/bash">Bash</a></li>
+<li><a href="https://www.unix-experience.fr/gitlab/gitlab_ci_maven_pipeline/">Maven project</a> can enjoy Gitlab CI too <span data-icon="😉"></span></li>
+<li>Use core features today, <a href="https://about.gitlab.com/direction/#cicd" title="not free yet?">check new features</a> often</li>
+</ul>
+</section>
+      </div>
+    </div>
+    <div class="slide-wrapper">
+      <div class="slide hidden author-slide" id="slide-12">
+        <div data-id="12" class="slide-overlay"></div>
+        <section class="slide-content"><div class="author">
+  <h1 class="name">I&#39;m Adrien, frontend developer</h1>
+    <h3 class="email">
+      <a href="mailto:a.gibrat@oodrive.com">a.gibrat@oodrive.com</a>
+    </h3>
+</div>
+</section>
+      </div>
+    </div>
+</div>
+
+
+
+
+  <script type="text/javascript">
+    /**
+ * Returns the current page number of the presentation.
+ */
+function currentPosition() {
+  return parseInt(document.querySelector('.slide:not(.hidden)').id.slice(6));
+}
+
+/**
+ * Navigates forward n pages
+ * If n is negative, we will navigate in reverse
+ */
+function navigate(n) {
+  var position = currentPosition();
+  var numSlides = document.getElementsByClassName('slide').length;
+
+  var $fragments = document.querySelectorAll('#slide-' + position + ' .fragment');
+  var fragmentsFinished = false;
+  if ($fragments.length) {
+    if (n > 0) {
+      var $f = document.querySelectorAll('#slide-' + position + ' .fragment.hidden');
+      if (!$f.length) fragmentsFinished = true;
+      else $f[0].classList.remove('hidden');
+    } else {
+      var $f = document.querySelectorAll('#slide-' + position + ' .fragment:not(.hidden)');
+      if (!$f.length) fragmentsFinished = true;
+      else $f[$f.length - 1].classList.add('hidden');
+    }
+  } else {
+    fragmentsFinished = true;
+  }
+
+  if (fragmentsFinished) {
+    /* Positions are 1-indexed, so we need to add and subtract 1 */
+    var nextPosition = (position - 1 + n) % numSlides + 1;
+
+    /* Normalize nextPosition in-case of a negative modulo result */
+    nextPosition = (nextPosition - 1 + numSlides) % numSlides + 1;
+
+    document.getElementById('slide-' + position).classList.add('hidden');
+    document.getElementById('slide-' + nextPosition).classList.remove('hidden');
+    position = nextPosition
+    updateProgress();
+    updateURL();
+    updateTabIndex();
+  }
+  document.getElementById('slide-' + position).dispatchEvent(new Event('navigate', { bubbles: true }))
+}
+
+/**
+ * Updates the current URL to include a hashtag of the current page number.
+ */
+function updateURL() {
+  try {
+    window.history.replaceState({}, null, '#' + currentPosition());
+  } catch (e) {
+    window.location.hash = currentPosition();
+  }
+}
+
+/**
+ * Sets the progress indicator.
+ */
+function updateProgress() {
+  var progressBar = document.querySelector('.progress-bar');
+
+  if (progressBar !== null) {
+    var numSlides = document.getElementsByClassName('slide').length;
+    var position = currentPosition() - 1;
+    var percent = (numSlides === 1) ? 100 : 100 * position / (numSlides - 1);
+    progressBar.style.width = percent.toString() + '%';
+  }
+}
+
+/**
+ * Removes tabindex property from all links on the current slide, sets
+ * tabindex = -1 for all links on other slides. Prevents slides from appearing
+ * out of control.
+ */
+function updateTabIndex() {
+  var allLinks = document.querySelectorAll('.slide a');
+  var position = currentPosition();
+  var currentPageLinks = document.getElementById('slide-' + position).querySelectorAll('a');
+  var i;
+
+  for (i = 0; i < allLinks.length; i++) {
+    allLinks[i].setAttribute('tabindex', -1);
+  }
+
+  for (i = 0; i < currentPageLinks.length; i++) {
+    currentPageLinks[i].removeAttribute('tabindex');
+  }
+}
+
+/**
+ * Determines whether or not we are currently in full screen mode
+ */
+function isFullScreen() {
+  return document.fullscreenElement ||
+    document.mozFullScreenElement ||
+    document.webkitFullscreenElement ||
+    document.msFullscreenElement;
+}
+
+/**
+ * Toggle fullScreen mode on document element.
+ * Works on chrome (>= 15), firefox (>= 9), ie (>= 11), opera(>= 12.1), safari (>= 5).
+ */
+function toggleFullScreen() {
+  /* Convenient renames */
+  var docElem = document.documentElement;
+  var doc = document;
+
+  docElem.requestFullscreen =
+    docElem.requestFullscreen ||
+    docElem.msRequestFullscreen ||
+    docElem.mozRequestFullScreen ||
+    docElem.webkitRequestFullscreen.bind(docElem, Element.ALLOW_KEYBOARD_INPUT);
+
+  doc.exitFullscreen =
+    doc.exitFullscreen ||
+    doc.msExitFullscreen ||
+    doc.mozCancelFullScreen ||
+    doc.webkitExitFullscreen;
+
+  isFullScreen() ? doc.exitFullscreen() : docElem.requestFullscreen();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Update the tabindex to prevent weird slide transitioning
+  updateTabIndex()
+
+  // If the location hash specifies a page number, go to it.
+  var page = window.location.hash.slice(1)
+  if (page) {
+    navigate(parseInt(page) - 1);
+  }
+
+  document.onkeydown = (e) => {
+    if(e.target.tagName.toLowerCase() === 'textarea') return
+    var kc = e.keyCode
+
+    // left, down, H, J, backspace, PgUp - BACK
+    // up, right, K, L, space, PgDn - FORWARD
+    // enter - FULLSCREEN
+    if (kc === 37 || kc === 40 || kc === 8 || kc === 72 || kc === 74 || kc === 33) {
+      navigate(-1)
+    } else if (kc === 38 || kc === 39 || kc === 32 || kc === 75 || kc === 76 || kc === 34) {
+      navigate(1)
+    } else if (kc === 13) {
+      toggleFullScreen()
+    } else if (kc === 27) {
+      toggleOverview()
+    }
+  }
+
+  if (document.querySelector('.next') && document.querySelector('.prev')) {
+    document.querySelector('.next').onclick = (e) => {
+      e.preventDefault()
+      navigate(1)
+    }
+
+    document.querySelector('.prev').onclick = (e) => {
+      e.preventDefault()
+      navigate(-1)
+    }
+  }
+  if (document.querySelector('.overview')) {
+    document.querySelector('.overview').onclick = toggleOverview
+  }
+
+  document.querySelectorAll('.slide-overlay').forEach($overlay => {
+    $overlay.onclick = event => {
+      navigate(parseInt(event.target.dataset.id) - currentPosition())
+      toggleOverview()
+    }
+  })
+
+  document.querySelectorAll('.fragment').forEach($fragment => {
+    $fragment.classList.add('hidden')
+  })
+
+})
+
+function toggleOverview() {
+  if (window.$style !== undefined) {
+    window.$style.remove()
+    delete window.$style
+    document.querySelector('.slides').classList.remove('active')
+  } else {
+    const $slides = document.querySelector('.slides')
+    $slides.classList.add('active')
+    const slidesList = document.querySelectorAll('.slide-wrapper')
+
+    const w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight || e.clientHeight || g.clientHeight
+
+    w.$style = d.createElement('style')
+    w.$style.innerHTML = '.slide-wrapper {width: ' + (x * 0.25) + 'px; height: ' + (y * 0.25) + 'px; } body .slide {width: ' + x + 'px; height: ' + y + 'px; position: relative; transform: scale(0.25,0.25); transform-origin: 0 0; } .slide.hidden{visibility: visible;}'
+    d.getElementsByTagName('head')[0].appendChild(w.$style)
+  }
+}
+
+  </script>
+</body>
+</html>
