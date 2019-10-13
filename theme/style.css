@@ -6,14 +6,10 @@
   font-family: 'Noto Sans';
   src: local('Noto Sans'), local('NotoSans'), url(theme/font/notosans.woff2) format('woff2');
 }
-@font-face {
-  font-family: 'Hind';
-  src: local('Hind Light'), local('Hind-Light'), url(theme/font/hind.woff2) format('woff2');
-}
 
 /* Theme Styles */
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Segoe UI Emoji', 'Noto Sans', sans-serif;
   font-weight: 300;
   font-size: 150%;
   color: #1C0F5D;
@@ -90,12 +86,6 @@ body {
   overflow: hidden;
 }
 
-#slide-2 img {
-  height: 70vh;
-  margin: 0 auto;
-  display: block;
-}
-
 .controls {
   position: absolute;
   bottom: 10px;
@@ -114,7 +104,7 @@ body {
   cursor: pointer;
 }
 .controls .overview:hover {
-  color: #e5007e;
+  color: #8a8cde;
 }
 .controls .arrow {
   float: left;
@@ -147,12 +137,12 @@ body {
 }
 
 .controls .prev:hover {
-  border-right-color: #e5007e;
+  border-right-color: #8a8cde;
   cursor: pointer;
 }
 
 .controls .next:hover {
-  border-left-color: #e5007e;
+  border-left-color: #8a8cde;
   cursor: pointer;
 }
 
@@ -160,7 +150,6 @@ h1,
 h2,
 h3 {
   margin: 1rem 0;
-  font-family: 'Hind', sans-serif;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -181,7 +170,7 @@ h2 {
 h3 {
   font-size: 140%;
   padding-bottom: 1rem;
-  border-bottom: 1px ridge #ff8061;
+  border-bottom: 1px ridge #8a8cde;
 }
 
 ul {
@@ -191,7 +180,7 @@ ul {
 blockquote {
   padding-left: 20px;
   margin-left: 0;
-  border-left: 5px solid #ff8061;
+  border-left: 5px solid #8a8cde;
   border-radius: 0 3px 3px 0;
 }
 
@@ -209,7 +198,7 @@ ul {
 }
 ul li::before {
   content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: #ff8061; /* Change the color */
+  color: #8a8cde; /* Change the color */
   font-weight: bold; /* If you want it to be bold */
   display: inline-block; /* Needed to add space between the bullet and the text */ 
   width: 1em; /* Also needed for space (tweak if needed) */
@@ -223,7 +212,7 @@ span[data-icon] {
 [data-icon]::before {
   display: inline-block;
   content: attr(data-icon);
-  color: #ff8061;
+  color: #8a8cde;
   font-size: 1.5em;
   vertical-align: sub;
   margin-right: .5em;
@@ -231,6 +220,9 @@ span[data-icon] {
 [data-icon="✓"]::before {
   color: green;
 }
+[data-icon="❌"]::before {
+  color: red;
+}8a8cde
 :not(.hidden) [data-icon]:not(.hidden)::before {
   animation-name: stamp;
   animation-duration: 0.5s;
@@ -241,7 +233,7 @@ small {
   font-size: 60%;
 }
 small.fragment {
-  color: #e5007e;
+  color: #8a8cde;
 }
 .slide.screen img {
   max-width: 80vw;
@@ -250,10 +242,10 @@ small.fragment {
   display: block;
 }
 .slide.screen.full img {
-  width: 100%;
+  height: 80vh;
 }
 .slide.screen.large img {
-  width: 70%;
+  height: 60vh;
 }
 
 .left {
@@ -286,11 +278,11 @@ small.fragment {
 a {
   word-break: break-all;
   text-decoration: none;
-  color: #e5007e;
+  color: #8a8cde;
 }
 
 hr {
-  border: 1px solid #e5007e;
+  border: 1px solid #8a8cde;
 }
 
 
@@ -341,8 +333,8 @@ table th {
   }
 
   img {
-    width: 100%;
-    border-radius: 3px;
+    margin: 0 auto;
+    display: block;
   }
 
   .prev,

@@ -1,4 +1,4 @@
-title: Password is 💀
+title: Password 💀
 author:
   name: I'm Adrien, frontend developer
   email: a.gibrat@oodrive.com
@@ -8,86 +8,103 @@ output: index.html
 
 --
 
-# Password is <span style="color:black">💀</span>
-
--- screen full
-
-[![Password strength misconception](img/password_strength.png)](https://xkcd.com/936/ "xkcd, the universal source of truth")
+# Password 💀
 
 --
 
 ## Password sucks
 
-<center>2018: [The begining of "The end of passwords"](https://www.microsoft.com/en-us/security/technology/identity-access-management/passwordless)</center>
+<center>Since 2018, Microsoft advocate [The begining of "The end of passwords"](https://www.microsoft.com/en-us/security/technology/identity-access-management/passwordless)</center>
 
-<span class="fragment" data-icon="🔓">not secure <small>[haveibeenpwned](https://haveibeenpwned.com/unifiedsearch/s.deremur%40oodrive.fr): 8 506 873 299 accounts</small></span><br>
-<span class="fragment" data-icon="☹">not user friendly <small>[complex password = ugly UX](https://uxplanet.org/why-complex-passwords-are-bad-design-and-5-ways-to-do-better-affcc4516406)</small></span><br>
+<span class="fragment" data-icon="🔓">not secure <small>[haveibeenpwned](https://haveibeenpwned.com/unifiedsearch/s.deremur%40oodrive.fr) 408 leaked
+dataset = 8 506 873 299 accounts</small></span><br>
+<span class="fragment" data-icon="😱">not user friendly <small>[password = complexity](https://uxplanet.org/why-complex-passwords-are-bad-design-and-5-ways-to-do-better-affcc4516406) your mom doesn't use a password manager</small></span><br>
+
+-- screen full
+
+[![Password strength misconception](img/password_strength.png)](https://xkcd.com/9368a8cde/ "xkcd, the universal source of truth")
 
 --
 
 ### Password policies 💩
 
-<center>[ANSSI](https://www.ssi.gouv.fr/guide/mot-de-passe/ "Agence Nationale de la Sécurité des Systèmes d'Information") ⚡ [NIST](https://pages.nist.gov/800-63-3/sp800-63b.html#sec5 "National Institute of Standards and Technology")</center>
+<center>various best practices [ANSSI](https://www.ssi.gouv.fr/guide/mot-de-passe/ "Agence Nationale de la Sécurité des Systèmes d'Information") ⚡ [NIST](https://pages.nist.gov/800-63-3/sp800-63b.html#sec5 "National Institute of Standards and Technology")</center>
 
-<span class="fragment check" data-icon="✓">do not reuse password</span><br>
-<span class="fragment check" data-icon="✓">prefer passphrase</span><br>
-<span class="fragment check" data-icon="❎">force special characters</span><br>
-<span class="fragment check" data-icon="❎">force periodic password changes</span><br>
-<span class="fragment check" data-icon="✓">check against lists (weak, common, leaked, etc.)</span><br>
-
--- screen full
-
-[![User experience when forgot password](img/forget_password.jpg)]()
-
--- screen full
-
-[![User experience when password expires](img/expired_password.jpg)]()
-
-### <small>Covers</small> various use cases
-
-> Successful for multiple pipeline types
-
-- Single Page Applications <small class="fragment">[build](https://docs.gitlab.com/ce/ci/examples/), [release](https://docs.gitlab.com/ce/workflow/releases.html) & [deploy](https://docs.gitlab.com/ce/topics/autodevops/)</small>
-- Components & libraries <small class="fragment">[test](https://about.gitlab.com/2018/02/05/test-all-the-things-gitlab-ci-docker-examples/) & [publish](https://about.gitlab.com/stages-devops-lifecycle/package/)</small>
-- End2end tests <small class="fragment">[scheduled executions](https://docs.gitlab.com/ce/user/project/pipelines/schedules.html) & [aggregate data](https://about.gitlab.com/2016/08/26/ci-deployment-and-environments/)</small>
-- Documentations & tasks <small class="fragment">[hosted by gitlab pages](https://docs.gitlab.com/ce/user/project/pages/)</small>
-
---
-
-# What does it look like ?
-
-<center>Few examples how we use Gitlab CI</center>
-
--- screen
-
-### Pipelines show jobs status at each step
-
-<p class="fragment" data-icon="🎉">Visible pipeline details <small>[in Merge Request view ](https://about.gitlab.com/2016/07/29/the-basics-of-gitlab-ci/)</small></p>
-
-![Gitlab Pipeline in MR](img/integrated.png "CI at your fingertips")
-
--- screen full
-
-### Jobs log task execution & keep artifacts
-
-<p class="fragment" data-icon="👁">Easy to read logs <small>[ansi colors support](https://gitlab.com/gitlab-org/gitlab-ce/issues/37898)</small></p>
-<p class="fragment" data-icon="📦">Save artifacts between jobs <small>[to access it later](https://docs.gitlab.com/ce/user/project/pipelines/job_artifacts.html)</small></p>
-
-![Gitlab CI Job view](img/job.png "Reabable logs & artifact browsing")
+<span class="fragment check" data-icon="✓">never reuse password</span><br>
+<span class="fragment check" data-icon="✓">use passphrase</span><br>
+<span class="fragment check" data-icon="✓">check against lists (contextual, dictionary, common, leaked, etc.)</span><br>
+<span class="fragment check" data-icon="💥">force special characters <small>leet `Oodrive$1`</small></span><br>
+<span class="fragment check" data-icon="💥">force periodic password changes <small>#... `Oodrive9`</small></span><br>
 
 -- screen large
 
-### Using template allow DRY CI settings
+### Forget password 😡
 
-<p class="fragment" data-icon="📄">Reusable versioned templates <small>[with include & extends](https://docs.gitlab.com/ce/ci/yaml/#include)</small></p>
+![User experience when forgot password](img/forget_password.gif)
 
-![Gitlab CI yaml](img/yaml.png "Concise markup using templates")
+-- screen large
+
+### Expired password 🤬 
+
+![User experience when password expires](img/expired_password.gif)
+
+-- screen
+
+## FIDO <small class="fragment">[alliance](https://fidoalliance.org/members/)</small>
+
+<center class="fragment">Fast ID online <small>[Solving the World's Password Problem](https://fidoalliance.org/what-is-fido/)</small></center>
+
+![Fast ID online](img/fido.gif)
 
 --
 
-## Last tips
+### Specifications 🤖
 
-- [Package tools](https://docs.gitlab.com/ce/ci/docker/using_docker_build.html) with [Docker](https://github.com/wsargent/docker-cheat-sheet)
-- Script with your [favorite language](https://nodejs.org/en/docs/es6/), glue with [Bash](https://devhints.io/bash)
-- [Maven project](https://www.unix-experience.fr/gitlab/gitlab_ci_maven_pipeline/) can enjoy Gitlab CI too <span data-icon="😉"></span>
-- Use core features today, [check new features](https://about.gitlab.com/direction/#cicd "not free yet?") often
+- FIDO U2F <small>Universal *Second Factor authentication*</small><br><small class="fragment">using asymetric cryptography with USB security key (+ NFC / BLE)</small>
+- FIDO UAF <small>Universal Authentication Framework</small><br><small class="fragment">*Passwordless Authentication* with biometrics & external security device</small>
+- FIDO2 [W3C WebAuthn](https://www.w3.org/TR/webauthn-1/) <small>(March 2019) API for accessing Public Key</small><br><small class="fragment">Secure passwordless & multi-factor authentication for the web</small>
+
+-- screen
+
+### Client to Authenticator Protocol 🤓
+
+[![WebAuthn + CTAP Flow](img/fido2_flow.jpg)](https://fidoalliance.org/fido2/)
+
+-- screen
+
+### Simple worklow 🤗
+
+<div style="float:left;width: 50%">
+**Registration**
+[![WebAuthn register worklow](img/webauthn_register.jpg)](https://webauthn.guide/)
+</div>
+
+<div style="float:left">
+**Login**
+[![WebAuthn login worklow](img/webauthn_login.jpg)](https://fidoalliance.org/key-differentiators/)
+</div>
+-- screen
+
+### FIDO 2 support 🥳
+
+[![WebAuthn support](img/fido2_support.jpg)](https://fidoalliance.org/fido2/fido2-web-authentication-webauthn/)
+
+<center>[Windows 10](https://fidoalliance.org/microsoft-achieves-fido2-certification-for-windows-hello/), [Android 7+](https://fidoalliance.org/android-now-fido2-certified-accelerating-global-migration-beyond-passwords/)(1B+ devices)<br>& all evegreen browsers, including [Safari](https://webkit.org/blog/8517/release-notes-for-safari-technology-preview-71/)</center>
+
+--
+
+## Demo 👩‍💻
+
+https://webauthn.io
+
+--
+
+### Password is dead, long live the password 👑
+
+Security experts:
+
+[300 billion passwords by 2020 <br>$6 trillion annual damage by 2021](https://thycotic.com/wp-content/uploads/2013/03/Cybersecurity-Ventures-Thycotic_Password-Protection.pdf)
+
+me:
+
+[Start learning WebAuthn](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API) today!
