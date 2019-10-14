@@ -517,6 +517,7 @@ dataset = 8 506 873 299 accounts</small></span><br>
 <p><span class="fragment check" data-icon="✓">never reuse password</span><br>
 <span class="fragment check" data-icon="✓">use passphrase</span><br>
 <span class="fragment check" data-icon="✓">check against lists (contextual, dictionary, common, leaked…)</span><br>
+<span class="fragment check" data-icon="✓">SMS is <a href="https://www.bankinfosecurity.com/heres-account-authentication-shouldnt-use-sms-a-11708">not secure</a> (PSD2: banking deprecated SMS)</span><br>
 <span class="fragment check" data-icon="💥">force special characters <small>leet <code>Oodrive$1</code></small></span><br>
 <span class="fragment check" data-icon="💥">force periodic password changes <small>#… <code>Oodrive9</code></small></span><br></p>
 </section>
@@ -565,8 +566,11 @@ dataset = 8 506 873 299 accounts</small></span><br>
         <div data-id="9" class="slide-overlay"></div>
         <section class="slide-content"><h3 id="client-to-authenticator-protocol-">Client to Authenticator Protocol 🤓</h3>
 <p><a href="https://fidoalliance.org/fido2/"><img src="img/fido2_flow.jpg" alt="WebAuthn + CTAP Flow"></a></p>
+<center  class="fragment" style="background-repeat:no-repeat;background-image:url(img/phone.png); background-position: 4em top"> = cryptographic &amp; biometric proof, NOT SMS<sup><small>™</small></sup><br><br></center>
+
+
 <center><a href="https://en.wikipedia.org/wiki/Client_to_Authenticator_Protocol">CTAP 2</a> = WebAuthn authenticator specification
-<br>(CTAP1 = U2F only)</center></section>
+<br>(CTAP 1 = U2F only)</center></section>
       </div>
     </div>
     <div class="slide-wrapper">
@@ -604,10 +608,13 @@ dataset = 8 506 873 299 accounts</small></span><br>
       <div class="slide hidden" id="slide-13">
         <div data-id="13" class="slide-overlay"></div>
         <section class="slide-content"><h3 id="password-is-dead-long-live-the-password-">Password is dead, long live the password 👑</h3>
-<p>Security experts:</p>
+<blockquote>
 <p><a href="https://thycotic.com/wp-content/uploads/2013/03/Cybersecurity-Ventures-Thycotic_Password-Protection.pdf">300 billion passwords by 2020 <br>$6 trillion annual damage by 2021</a></p>
-<p>Me:</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API">Do FIDO2 passwordless &amp; WebAuthn</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API">Do FIDO2 passwordless &amp; WebAuthn</a> today!
+<br>FIDO is already a <a href="https://fidoalliance.org/fido-standards-meet-psd2-sca-requirements/">requirement for banking</a> <br>and will be one soon for other regulated industies.</p>
+</blockquote>
 </section>
       </div>
     </div>
@@ -627,6 +634,7 @@ dataset = 8 506 873 299 accounts</small></span><br>
 
 
 
+    <script async src="http://localhost:35729/livereload.js"></script>
 
   <script type="text/javascript">
     /**

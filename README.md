@@ -33,6 +33,7 @@ dataset = 8 506 873 299 accounts</small></span><br>
 <span class="fragment check" data-icon="✓">never reuse password</span><br>
 <span class="fragment check" data-icon="✓">use passphrase</span><br>
 <span class="fragment check" data-icon="✓">check against lists (contextual, dictionary, common, leaked…)</span><br>
+<span class="fragment check" data-icon="✓">SMS is [not secure](https://www.bankinfosecurity.com/heres-account-authentication-shouldnt-use-sms-a-11708) (PSD2: banking deprecated SMS)</span><br>
 <span class="fragment check" data-icon="💥">force special characters <small>leet `Oodrive$1`</small></span><br>
 <span class="fragment check" data-icon="💥">force periodic password changes <small>#… `Oodrive9`</small></span><br>
 
@@ -69,8 +70,14 @@ dataset = 8 506 873 299 accounts</small></span><br>
 ### Client to Authenticator Protocol 🤓
 
 [![WebAuthn + CTAP Flow](img/fido2_flow.jpg)](https://fidoalliance.org/fido2/)
+
+<center  class="fragment" style="background-repeat:no-repeat;background-image:url(img/phone.png); background-position: 4em top"> = cryptographic & biometric proof, NOT SMS<sup><small>™</small></sup><br><br></center>
+
+
 <center>[CTAP 2](https://en.wikipedia.org/wiki/Client_to_Authenticator_Protocol) = WebAuthn authenticator specification
-<br>(CTAP1 = U2F only)</center>
+<br>(CTAP 1 = U2F only)</center>
+
+
 
 -- screen
 
@@ -103,10 +110,7 @@ https://webauthn.io
 
 ### Password is dead, long live the password 👑
 
-Security experts:
+> [300 billion passwords by 2020 <br>$6 trillion annual damage by 2021](https://thycotic.com/wp-content/uploads/2013/03/Cybersecurity-Ventures-Thycotic_Password-Protection.pdf)
 
-[300 billion passwords by 2020 <br>$6 trillion annual damage by 2021](https://thycotic.com/wp-content/uploads/2013/03/Cybersecurity-Ventures-Thycotic_Password-Protection.pdf)
-
-Me:
-
-[Do FIDO2 passwordless & WebAuthn](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
+> [Do FIDO2 passwordless & WebAuthn](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API) today!
+> <br>FIDO is already a [requirement for banking](https://fidoalliance.org/fido-standards-meet-psd2-sca-requirements/) <br>and will be one soon for other regulated industies.
