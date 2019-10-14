@@ -33,7 +33,7 @@ dataset = 8 506 873 299 accounts</small></span><br>
 <span class="fragment check" data-icon="✓">never reuse password</span><br>
 <span class="fragment check" data-icon="✓">use passphrase</span><br>
 <span class="fragment check" data-icon="✓">check against lists (contextual, dictionary, common, leaked…)</span><br>
-<span class="fragment check" data-icon="✓">SMS is [not secure](https://www.bankinfosecurity.com/heres-account-authentication-shouldnt-use-sms-a-11708) (PSD2: banking deprecated SMS)</span><br>
+<span class="fragment check" data-icon="✓">SMS is [not secure](https://www.bankinfosecurity.com/heres-account-authentication-shouldnt-use-sms-a-11708) OTP (PSD2: banking deprecated SMS)</span><br>
 <span class="fragment check" data-icon="💥">force special characters <small>leet `Oodrive$1`</small></span><br>
 <span class="fragment check" data-icon="💥">force periodic password changes <small>#… `Oodrive9`</small></span><br>
 

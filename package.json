@@ -1,7 +1,7 @@
 {
-  "name": "ILoveGitlabCI.md",
+  "name": "Password 💀.md",
   "version": "0.0.1",
-  "description": "Quick talk for Open R&Day 2019 - Oodrive",
+  "description": "Quick talk for R&Day #14 2019 - Oodrive",
   "scripts": {
     "start": "cleaver watch README.md"
   },
