@@ -14,7 +14,7 @@ output: index.html
 
 ## Password sucks
 
-<center>Since 2018, Microsoft advocate [The begining of "The end of passwords"](https://www.microsoft.com/en-us/security/technology/identity-access-management/passwordless)</center>
+<center>Since 2018, Microsoft advocate<br>[The begining of "The end of passwords"](https://www.microsoft.com/en-us/security/technology/identity-access-management/passwordless)</center>
 
 <span class="fragment" data-icon="🔓">not secure <small>[haveibeenpwned](https://haveibeenpwned.com/unifiedsearch/s.deremur%40oodrive.fr) 408 leaked
 dataset = 8 506 873 299 accounts</small></span><br>
@@ -32,9 +32,9 @@ dataset = 8 506 873 299 accounts</small></span><br>
 
 <span class="fragment check" data-icon="✓">never reuse password</span><br>
 <span class="fragment check" data-icon="✓">use passphrase</span><br>
-<span class="fragment check" data-icon="✓">check against lists (contextual, dictionary, common, leaked, etc.)</span><br>
+<span class="fragment check" data-icon="✓">check against lists (contextual, dictionary, common, leaked…)</span><br>
 <span class="fragment check" data-icon="💥">force special characters <small>leet `Oodrive$1`</small></span><br>
-<span class="fragment check" data-icon="💥">force periodic password changes <small>#... `Oodrive9`</small></span><br>
+<span class="fragment check" data-icon="💥">force periodic password changes <small>#… `Oodrive9`</small></span><br>
 
 -- screen large
 
@@ -69,6 +69,8 @@ dataset = 8 506 873 299 accounts</small></span><br>
 ### Client to Authenticator Protocol 🤓
 
 [![WebAuthn + CTAP Flow](img/fido2_flow.jpg)](https://fidoalliance.org/fido2/)
+<center>[CTAP 2](https://en.wikipedia.org/wiki/Client_to_Authenticator_Protocol) = WebAuthn authenticator specification
+<br>(CTAP1 = U2F only)</center>
 
 -- screen
 
@@ -105,6 +107,6 @@ Security experts:
 
 [300 billion passwords by 2020 <br>$6 trillion annual damage by 2021](https://thycotic.com/wp-content/uploads/2013/03/Cybersecurity-Ventures-Thycotic_Password-Protection.pdf)
 
-me:
+Me:
 
-[Start learning WebAuthn](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API) today!
+[Do FIDO2 passwordless & WebAuthn](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)

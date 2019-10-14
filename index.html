@@ -6,8 +6,8 @@
   <title>Password 💀</title>
   <style type="text/css">
     @font-face {
-  font-family: 'Inconsolata';
-  src: local('Inconsolata Regular'), url(theme/font/inconsonlata.woff2) format('woff2');
+  font-family: 'Segoe UI Emoji';
+  src: local('Segoe UI Emoji'), url(theme/font/seguiemj.ttf) format('ttf'), url(theme/font/seguiemj.woff2) format('woff2');
 }
 @font-face {
   font-family: 'Noto Sans';
@@ -229,7 +229,7 @@ span[data-icon] {
 }
 [data-icon="❌"]::before {
   color: red;
-}8a8cde
+}
 :not(.hidden) [data-icon]:not(.hidden)::before {
   animation-name: stamp;
   animation-duration: 0.5s;
@@ -493,7 +493,7 @@ table th {
       <div class="slide hidden" id="slide-2">
         <div data-id="2" class="slide-overlay"></div>
         <section class="slide-content"><h2 id="password-sucks">Password sucks</h2>
-<center>Since 2018, Microsoft advocate <a href="https://www.microsoft.com/en-us/security/technology/identity-access-management/passwordless">The begining of &quot;The end of passwords&quot;</a></center>
+<center>Since 2018, Microsoft advocate<br><a href="https://www.microsoft.com/en-us/security/technology/identity-access-management/passwordless">The begining of &quot;The end of passwords&quot;</a></center>
 
 <p><span class="fragment" data-icon="🔓">not secure <small><a href="https://haveibeenpwned.com/unifiedsearch/s.deremur%40oodrive.fr">haveibeenpwned</a> 408 leaked
 dataset = 8 506 873 299 accounts</small></span><br>
@@ -516,9 +516,9 @@ dataset = 8 506 873 299 accounts</small></span><br>
 
 <p><span class="fragment check" data-icon="✓">never reuse password</span><br>
 <span class="fragment check" data-icon="✓">use passphrase</span><br>
-<span class="fragment check" data-icon="✓">check against lists (contextual, dictionary, common, leaked, etc.)</span><br>
+<span class="fragment check" data-icon="✓">check against lists (contextual, dictionary, common, leaked…)</span><br>
 <span class="fragment check" data-icon="💥">force special characters <small>leet <code>Oodrive$1</code></small></span><br>
-<span class="fragment check" data-icon="💥">force periodic password changes <small>#... <code>Oodrive9</code></small></span><br></p>
+<span class="fragment check" data-icon="💥">force periodic password changes <small>#… <code>Oodrive9</code></small></span><br></p>
 </section>
       </div>
     </div>
@@ -565,7 +565,8 @@ dataset = 8 506 873 299 accounts</small></span><br>
         <div data-id="9" class="slide-overlay"></div>
         <section class="slide-content"><h3 id="client-to-authenticator-protocol-">Client to Authenticator Protocol 🤓</h3>
 <p><a href="https://fidoalliance.org/fido2/"><img src="img/fido2_flow.jpg" alt="WebAuthn + CTAP Flow"></a></p>
-</section>
+<center><a href="https://en.wikipedia.org/wiki/Client_to_Authenticator_Protocol">CTAP 2</a> = WebAuthn authenticator specification
+<br>(CTAP1 = U2F only)</center></section>
       </div>
     </div>
     <div class="slide-wrapper">
@@ -605,8 +606,8 @@ dataset = 8 506 873 299 accounts</small></span><br>
         <section class="slide-content"><h3 id="password-is-dead-long-live-the-password-">Password is dead, long live the password 👑</h3>
 <p>Security experts:</p>
 <p><a href="https://thycotic.com/wp-content/uploads/2013/03/Cybersecurity-Ventures-Thycotic_Password-Protection.pdf">300 billion passwords by 2020 <br>$6 trillion annual damage by 2021</a></p>
-<p>me:</p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API">Start learning WebAuthn</a> today!</p>
+<p>Me:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API">Do FIDO2 passwordless &amp; WebAuthn</a></p>
 </section>
       </div>
     </div>
