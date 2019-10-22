@@ -14,7 +14,7 @@ output: index.html
 
 ## Password sucks
 
-<center>Since 2018, Microsoft advocate<br>[The begining of "The end of passwords"](https://www.microsoft.com/en-us/security/technology/identity-access-management/passwordless)</center>
+<center>Since 2018, Microsoft advocate<br>[The beginning of "The end of passwords"](https://www.microsoft.com/en-us/security/technology/identity-access-management/passwordless)</center>
 
 <span class="fragment" data-icon="🔓">not secure <small>[haveibeenpwned](https://haveibeenpwned.com/unifiedsearch/s.deremur%40oodrive.fr) 408 leaked
 dataset = 8 506 873 299 accounts</small></span><br>
@@ -55,7 +55,7 @@ dataset = 8 506 873 299 accounts</small></span><br>
 
 <center class="fragment">Fast ID online <small>[Solving the World's Password Problem](https://fidoalliance.org/what-is-fido/)</small></center>
 
-![Fast ID online](img/fido.gif)
+[![Fast ID online](img/fido.gif)](https://fidoalliance.org/)
 
 --
 
@@ -77,7 +77,22 @@ dataset = 8 506 873 299 accounts</small></span><br>
 <center>[CTAP 2](https://en.wikipedia.org/wiki/Client_to_Authenticator_Protocol) = WebAuthn authenticator specification
 <br>(CTAP 1 = U2F only)</center>
 
+-- screen
 
+### FIDO 2 support 🥳
+
+[![WebAuthn support](img/fido2_support.jpg)](https://fidoalliance.org/fido2/fido2-web-authentication-webauthn/)
+
+<center>[Windows 10](https://fidoalliance.org/microsoft-achieves-fido2-certification-for-windows-hello/), [Android 7+](https://fidoalliance.org/android-now-fido2-certified-accelerating-global-migration-beyond-passwords/)(1B+ devices)<br>& all evergreen browsers, including [Safari](https://webkit.org/blog/8517/release-notes-for-safari-technology-preview-71/)</center>
+
+-- screen
+
+## Demo 👩‍💻
+
+
+[![WebAuthn demo](img/webauthn_io.png)](https://webauthn.io)
+
+<center>https://webauthn.io</center>
 
 -- screen
 
@@ -92,19 +107,6 @@ dataset = 8 506 873 299 accounts</small></span><br>
 **Login**
 [![WebAuthn login worklow](img/webauthn_login.jpg)](https://fidoalliance.org/key-differentiators/)
 </div>
--- screen
-
-### FIDO 2 support 🥳
-
-[![WebAuthn support](img/fido2_support.jpg)](https://fidoalliance.org/fido2/fido2-web-authentication-webauthn/)
-
-<center>[Windows 10](https://fidoalliance.org/microsoft-achieves-fido2-certification-for-windows-hello/), [Android 7+](https://fidoalliance.org/android-now-fido2-certified-accelerating-global-migration-beyond-passwords/)(1B+ devices)<br>& all evegreen browsers, including [Safari](https://webkit.org/blog/8517/release-notes-for-safari-technology-preview-71/)</center>
-
---
-
-## Demo 👩‍💻
-
-https://webauthn.io
 
 --
 
@@ -113,4 +115,4 @@ https://webauthn.io
 > [300 billion passwords by 2020 <br>$6 trillion annual damage by 2021](https://thycotic.com/wp-content/uploads/2013/03/Cybersecurity-Ventures-Thycotic_Password-Protection.pdf)
 
 > [Do FIDO2 passwordless & WebAuthn](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API) today!
-> <br>FIDO is already a [requirement for banking](https://fidoalliance.org/fido-standards-meet-psd2-sca-requirements/) <br>and will be one soon for other regulated industies.
+> <br>FIDO is already a [requirement for banking](https://fidoalliance.org/fido-standards-meet-psd2-sca-requirements/) <br>and will be one soon for other regulated industries.
