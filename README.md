@@ -115,4 +115,4 @@ dataset = 8 506 873 299 accounts</small></span><br>
 > [300 billion passwords by 2020 <br>$6 trillion annual damage by 2021](https://thycotic.com/wp-content/uploads/2013/03/Cybersecurity-Ventures-Thycotic_Password-Protection.pdf)
 
 > [Do FIDO2 passwordless & WebAuthn](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API) today!
-> <br>FIDO is already a [requirement for banking](https://fidoalliance.org/fido-standards-meet-psd2-sca-requirements/) <br>and will be one soon for other regulated industries.
+> <br>Strong authentication is already a [requirement for banking](https://fidoalliance.org/fido-standards-meet-psd2-sca-requirements/) <br>and will eventually be one for other regulated industries.
