@@ -61,7 +61,7 @@ dataset = 8 506 873 299 accounts</small></span><br>
 
 ### Specifications 🤖
 
-- FIDO U2F <small>Universal *Second Factor authentication*</small><br><small class="fragment">using asymetric cryptography with USB security key (+ NFC / BLE)</small>
+- FIDO U2F <small>Universal *Second Factor authentication*</small><br><small class="fragment">using asymmetric cryptography with USB security key (+ NFC / BLE)</small>
 - FIDO UAF <small>Universal Authentication Framework</small><br><small class="fragment">*Passwordless Authentication* with biometrics & external security device</small>
 - FIDO2 [W3C WebAuthn](https://www.w3.org/TR/webauthn-1/) <small>(March 2019) API for accessing Public Key</small><br><small class="fragment">Secure passwordless & multi-factor authentication for the web</small>
 
@@ -96,16 +96,16 @@ dataset = 8 506 873 299 accounts</small></span><br>
 
 -- screen
 
-### Simple worklow 🤗
+### Simple workflow 🤗
 
 <div style="float:left;width: 50%">
 **Registration**
-[![WebAuthn register worklow](img/webauthn_register.jpg)](https://webauthn.guide/)
+[![WebAuthn register workflow](img/webauthn_register.jpg)](https://webauthn.guide/)
 </div>
 
 <div style="float:left">
 **Login**
-[![WebAuthn login worklow](img/webauthn_login.jpg)](https://fidoalliance.org/key-differentiators/)
+[![WebAuthn login workflow](img/webauthn_login.jpg)](https://fidoalliance.org/key-differentiators/)
 </div>
 
 --
