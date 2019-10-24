@@ -51,7 +51,7 @@ dataset = 8 506 873 299 accounts</small></span><br>
 
 -- screen
 
-## FIDO <small class="fragment">[alliance](https://fidoalliance.org/members/)</small>
+## FIDO <small class="fragment">[alliance](https://fidoalliance.org/members/)</small> 👀
 
 <center class="fragment">Fast ID online <small>[Solving the World's Password Problem](https://fidoalliance.org/what-is-fido/)</small></center>
 
@@ -79,7 +79,7 @@ dataset = 8 506 873 299 accounts</small></span><br>
 
 -- screen
 
-### FIDO 2 support 🥳
+### FIDO 2 support 💪
 
 [![WebAuthn support](img/fido2_support.jpg)](https://fidoalliance.org/fido2/fido2-web-authentication-webauthn/)
 
